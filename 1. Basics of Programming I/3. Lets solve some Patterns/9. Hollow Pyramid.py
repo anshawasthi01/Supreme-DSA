@@ -1,18 +1,14 @@
-n = int(input())
+# Generating Hollow Pyramid Pattern Using Stars
 
-for i in range(n):
-    k = 0
-    for j in range(2 * n - 1):
-        if (j < n - i - 1):
-            print(" ",end='')
+row = int(input('Enter number of rows required: '))
 
-        elif (k < 2 * i + 1):
-            if (k == 0) or (k== 2 * i) or (i == n - 1):
-                print("*",end='')
-            else:
-                print(" ",end='')
-                k += 1
-                
+for i in range(row):
+    for j in range(row-i):
+        print(' ', end='') # printing space required and staying in same line
+    
+    for j in range(2*i+1):
+        if j==0 or j==2*i or i==row-1:
+            print('*',end='')
         else:
-            print(" ",end='')
-    print()
+            print(' ', end='')
+    print() # printing new line

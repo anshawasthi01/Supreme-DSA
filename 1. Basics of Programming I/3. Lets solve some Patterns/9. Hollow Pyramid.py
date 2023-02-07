@@ -1,4 +1,4 @@
-# Generating Hollow Pyramid Pattern Using Stars
+#Generating Hollow Pyramid Pattern Using Stars
 
 row = int(input('Enter number of rows required: '))
 

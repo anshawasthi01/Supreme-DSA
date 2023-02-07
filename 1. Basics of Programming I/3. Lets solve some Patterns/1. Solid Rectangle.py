@@ -1,4 +1,4 @@
-# Printing Solid rectangle
+# Printing Solid Rectangle
 
 row, col = map(int, input().split())
 

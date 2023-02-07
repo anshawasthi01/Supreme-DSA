@@ -15,7 +15,6 @@ void printNumber(int num) {
 	cout << num << endl;
 }
 
-
 int add(int x, int y  );
 
 int findMax(int num1, int num2, int num3) {

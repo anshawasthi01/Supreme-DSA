@@ -5,4 +5,5 @@ def num(n):
         print('EVEN')
     else:
         print('ODD')
+        
 num(n)

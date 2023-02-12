@@ -57,5 +57,9 @@ temp(arr, start, end)
 xor(arr, start, end)
 PlusMinus(arr, start, end)
 
+# x = x*y
+# t = x/y
+# x = x/y
+
 
 

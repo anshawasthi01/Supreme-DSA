@@ -1,6 +1,5 @@
 n = int(input())
 
-
 def BinaryToDecimal(n):
     decimal = 0
     i = 0

@@ -2,6 +2,7 @@
 #include<vector>
 using namespace std;
 
+
 int findPivot(vector<int> arr) {
   int s = 0;
   int e = arr.size() - 1;

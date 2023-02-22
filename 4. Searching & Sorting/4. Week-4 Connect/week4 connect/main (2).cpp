@@ -1,3 +1,4 @@
+
 class Solution {
 public:
 int findPivot(vector<int> arr) {

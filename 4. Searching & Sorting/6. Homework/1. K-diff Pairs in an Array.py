@@ -1,6 +1,4 @@
 # https://leetcode.com/problems/k-diff-pairs-in-an-array/
-
-
 # CodeHelp
 
 def bs(nums, start, x):

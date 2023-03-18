@@ -1,7 +1,6 @@
 # https://leetcode.com/problems/count-primes/description/
 
 # CodeHelp
-
 class Solution:
     def countPrimes(self, n: int) -> int:
         if(n<=1):

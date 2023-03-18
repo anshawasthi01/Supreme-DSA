@@ -1,3 +1,6 @@
+# https://practice.geeksforgeeks.org/problems/product-of-primes5328/1
+
+
 import math
 def Sieve(n):
     if(n<=1):

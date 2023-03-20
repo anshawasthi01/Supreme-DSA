@@ -2,6 +2,7 @@ def printCounting(n):
 	# base case
 	if(n == 0):
 		return
+        
 	# processing
 	print(n,end = ' ')
 

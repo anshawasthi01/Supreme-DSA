@@ -1,0 +1,1 @@
+maxi = max(summ, maxi)

@@ -73,6 +73,7 @@ else:
 
 
 # --------------------------------------------------------------------------------------------
+# GPT
 def isSafe(i, j, row, col, arr, visited):
   if i >= 0 and i < row and j >= 0 and j < col and arr[i][j] == 1 and not visited[i][j]:
     return True

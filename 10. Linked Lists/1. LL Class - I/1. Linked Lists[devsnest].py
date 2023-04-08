@@ -9,6 +9,8 @@ class Node:
 # Creation of List 
 # a = Node(1)
 # a.next = Node(2)
+# a.next.next = Node(3)
+
 a = Node(1, Node(2, Node(3, Node(4))))
 
 # Print Linked List

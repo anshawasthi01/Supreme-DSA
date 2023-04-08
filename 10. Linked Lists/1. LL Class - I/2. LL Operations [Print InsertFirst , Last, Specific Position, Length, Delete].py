@@ -6,6 +6,7 @@ class Node:
     # def __str__(self):
     #     return f"node {self.data} -> {self.next}"
 
+    # TO a destrcutor to deleteDO: Write a node
     # def _del_(self):
         # print("Node with value:", self.data, "deleted")
 
@@ -16,16 +17,22 @@ def printList(head):
         temp = temp.next
     print()
 
+# I want to insert a node right at the head of Linked List
 def insertAtHead(head, data):
+    # check for Empty LL
     if not head:
         newNode = Node(data)
         head = newNode
     else:
+        # step1:
         newNode = Node(data)
+        # step2:
         newNode.next = head
+        # step3:
         head = newNode
     return head
 
+# I want to insert a node right at the end of LINKED LIST
 def insertAtTail(head, data):
     if not head:
         newNode = Node(data)
@@ -49,6 +56,7 @@ def insertAtPosition(head, data, position):
         head = newNode
         return head
 
+    # step1: find the position: prev & curr
     if position == 0:
         head = insertAtHead(head, data)
         return head
@@ -58,14 +66,18 @@ def insertAtPosition(head, data, position):
         head = insertAtTail(head, data)
         return head
 
+    # ste1:find prev and curr
     i = 1
     prev = head
     while i < position:
         prev = prev.next
         i += 1
     curr = prev.next
+    # step2
     newNode = Node(data)
+    # step3
     newNode.next = curr
+    # step4
     prev.next = newNode
     return head
 
@@ -74,6 +86,7 @@ def deleteNode(head, position):
         print("Cannot delete, linked list is empty")
         return
 
+    # deleting first node
     if position == 1:
         temp = head
         head = head.next
@@ -82,16 +95,21 @@ def deleteNode(head, position):
 
     len = findLength(head)
 
+    # deleting last node
     if position == len:
+        # find prev
         i = 1
         prev = head
         while i < position - 1:
             prev = prev.next
             i += 1
 
+        # step2
         prev.next = None
         return head
 
+    # deleting middle node
+    # step  : find prev and curr
     i = 1
     prev = head
     while i < position - 1:
@@ -99,7 +117,9 @@ def deleteNode(head, position):
         i += 1
 
     curr = prev.next
+    # step2
     prev.next = curr.next
+    # step3
     curr.next = None
     return head
 

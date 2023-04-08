@@ -32,7 +32,7 @@ def insert_at_front(head, data):
 # Insert at Last
 def insert_at_last(head, data):
     if not head:
-        return Node(Node)
+        return Node(data)
     ptr = head
     while ptr.next:
         ptr = ptr.next

@@ -81,7 +81,7 @@ def removeLoop(head):
         prev = fast
         slow = slow.next
         fast = fast.next
-    prev.next = None
+    prev.next = None  # 1 case m fatega have to findout
     return slow
 
 

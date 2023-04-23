@@ -150,7 +150,7 @@ printList(head)
 # printList(head)
 
 temp = None
-head = sort2(head)
+head = sort2(head) # by creation of 3 separate list and join
 print("Came out of sort function")
 printList(head)
    

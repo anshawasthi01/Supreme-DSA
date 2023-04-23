@@ -42,7 +42,7 @@ def sortZeroOneTwo(head):
         temp = temp.next
         two -= 1
 
-def sortList(head):
+def sort2(head):
     if(head == None):
         print("LL is empty")
         return None
@@ -122,4 +122,35 @@ def sortList(head):
             zeroTail.next = twoHead
 
     # Remove zeroHead dummy node
+    temp = zeroHead
+    zeroHead = zeroHead.next
+    temp.next = None
+    del temp
+        
+    # return head of the modified linked list
+    return zeroHead
+    
+head = Node(2)
+second = Node(2)
+third = Node(0)
+fourth = Node(1)
+fifth = Node(0)
+sixth = Node(0)
+head.next = second
+second.next = third
+third.next = fourth
+fourth.next = fifth
+fifth.next = sixth
+
+print("input LL: ")
+printList(head)
+
+# sortZeroOneTwo(head)
+# print("printing the sorted list ")
+# printList(head)
+
+temp = None
+head = sort2(head)
+print("Came out of sort function")
+printList(head)
    

@@ -1,6 +1,5 @@
 def solve(arr, n, k):
     q = []
-
     # Process first window of size k
     for i in range(k):
         if arr[i] < 0:

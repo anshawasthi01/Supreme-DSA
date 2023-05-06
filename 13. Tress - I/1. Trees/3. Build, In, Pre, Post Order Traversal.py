@@ -52,6 +52,7 @@ def postorderTraversal(root):
     print(root.data, end=" ")
 
 
+
 root = buildTree()
 # inorderTraversal(root)
 # preorderTraversal(root)

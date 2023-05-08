@@ -1,3 +1,5 @@
+# https://practice.geeksforgeeks.org/problems/kth-ancestor-in-a-tree/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
+
 class Node:
     def __init__(self, data):
         self.data = data

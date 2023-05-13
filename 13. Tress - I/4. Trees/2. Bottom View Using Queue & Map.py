@@ -35,7 +35,7 @@ def printBottomView(root):
     q = deque([(root, 0)])
 
     while q:
-        frontNode, hd = q.popleft()
+        frontNode, hd = q.popleft() # horizontal distance
 
         # # jo bhi horizontal distance aaya h , check if answer for that hd already exists
         # # or not

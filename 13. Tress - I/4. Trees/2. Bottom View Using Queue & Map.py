@@ -23,7 +23,7 @@ def buildTree():
 from typing import Dict
 from collections import deque
 
-def printTopView(root):
+def printBottomView(root):
     if root is None:
         return
 
@@ -35,13 +35,13 @@ def printTopView(root):
     q = deque([(root, 0)])
 
     while q:
-        frontNode, hd = q.popleft() #horizontal distance
+        frontNode, hd = q.popleft()
 
-        # jo bhi horizontal distance aaya h , check if answer for that hd already exists
-        # or not
-        if hd not in topNode:
-            # create entry
-            topNode[hd] = frontNode.data
+        # # jo bhi horizontal distance aaya h , check if answer for that hd already exists
+        # # or not
+        # if hd not in topNode: these 3 lines for top view
+        # create entry
+        topNode[hd] = frontNode.data
 
         if frontNode.left:
             q.append((frontNode.left, hd-1))
@@ -55,7 +55,7 @@ def printTopView(root):
         print(hd, "->", node)
 
 root = buildTree()
-printTopView(root)
+printBottomView(root)
 
 # Input : 10, 20, 30, -1, -1, 40, 60, -1, -1, -1, 80, 50, -1, 70, -1, -1, 90, -1, -1
 

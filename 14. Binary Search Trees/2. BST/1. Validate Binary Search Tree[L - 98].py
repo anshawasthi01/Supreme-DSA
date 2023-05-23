@@ -1,5 +1,6 @@
 # https://leetcode.com/problems/validate-binary-search-tree/description/
 
+
 # CodeHelp
 class Solution:
     def solve(self, root, lb, ub):

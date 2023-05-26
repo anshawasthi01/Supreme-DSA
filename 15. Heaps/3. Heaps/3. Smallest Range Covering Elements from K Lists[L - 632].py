@@ -1,86 +1,55 @@
 # https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/
 
-class node{
-    public:
-    int data;
-    int row;
-    int col;
+# CodeHelp
+import heapq
+class Node:
+    def __init__(self, data: int, row: int, col: int):
+        self.data = data
+        self.row = row
+        self.col = col
+    def __lt__(self, other):
+        return self.data < other.data
 
-    node(int d, int r, int c) {
-        data = d;
-        row = r;
-        col = c;
-    }
-};
+class Solution:
+    def smallestRange(self, nums: List[List[int]]) -> List[int]:
+        mini = float('inf')
+        maxi = float('-inf')
 
-class compare{
-    public:
-    bool operator()(node* a, node* b) {
-        return a->data > b->data;
-    }
-};
- 
-class Solution {
-public:
-    vector<int> smallestRange(vector<vector<int>>& nums) {
-        int mini = INT_MAX;
-        int maxi = INT_MIN;
+        minHeap = []
+        k = len(nums)
+        for i in range(k):
+            element = nums[i][0]
+            maxi = max(maxi, element)
+            mini = min(mini, element)
+            heapq.heappush(minHeap, Node(element, i, 0))
 
-        priority_queue<node*, vector<node*>, compare> minHeap;
-        int k = nums.size();
-        for(int i=0; i<k; i++) {
-            int element = nums[i][0];
-            maxi = max( maxi, element);
-            mini = min(mini, element);
-            minHeap.push(new node(element, i, 0));
-        }
+        ansStart = mini
+        ansEnd = maxi
 
-        int ansStart = mini;
-        int ansEnd = maxi;
+        while minHeap:
+            top = heapq.heappop(minHeap)
+            topelement = top.data
+            topRow = top.row
+            topCol = top.col
 
+            # mini updated
+            mini = topelement
 
-        while(!minHeap.empty()) {
-            
-            node* top = minHeap.top();
-            int topelement = top->data;
-            int topRow = top->row;
-            int topCol = top->col;
-            minHeap.pop();
+            currRange = maxi - mini
+            ansRange = ansEnd - ansStart
+            if currRange < ansRange:
+                ansStart = mini
+                ansEnd = maxi
 
-            //mini updated
-            mini = topelement;
+            # check for new element in the same list
+            if topCol + 1 < len(nums[topRow]):
+                maxi = max(maxi, nums[topRow][topCol + 1])
+                newNode = Node(nums[topRow][topCol + 1], topRow, topCol + 1)
+                heapq.heappush(minHeap, newNode)
+            else:
+                break
 
-            //check for answer
-            int currRange = maxi-mini;
-            int ansRange = ansEnd - ansStart;
-            if(currRange < ansRange) {
-                ansStart = mini;
-                ansEnd = maxi;
-            }
-
-            //check for new element in the same list
-            if(topCol + 1 < nums[topRow].size()) {
-                maxi = max( maxi , nums[topRow][topCol+1]);
-                node* newNode = new node(nums[topRow][topCol+1], topRow, topCol+1);
-                minHeap.push(newNode);
-            }
-            else {
-                //there is no element int the same array or list
-                break;
-            }
-        }
-
-        vector<int> ans ;
-        ans.push_back(ansStart);
-        ans.push_back(ansEnd);
-        return ans;
-
-
-
-
-    }
-};
-
+        return [ansStart, ansEnd]
 
 
 

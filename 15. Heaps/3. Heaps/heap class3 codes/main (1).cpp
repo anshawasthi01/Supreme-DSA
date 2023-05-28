@@ -9,6 +9,7 @@
  * };
  */
 
+
 class compare {
     public:
     bool operator()(ListNode* a, ListNode* b) {

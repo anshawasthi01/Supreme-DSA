@@ -16,6 +16,7 @@ class info {
         }  
 };
 
+
 class compare {
         public:
         bool operator()(info* a, info* b) {

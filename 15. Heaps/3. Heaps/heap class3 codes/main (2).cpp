@@ -11,6 +11,7 @@ class node{
     }
 };
 
+
 class compare{
     public:
     bool operator()(node* a, node* b) {

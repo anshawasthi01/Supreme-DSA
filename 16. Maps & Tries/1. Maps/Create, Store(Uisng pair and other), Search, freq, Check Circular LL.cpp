@@ -12,7 +12,7 @@ int main() {
   pair<string, int> p2("alto", 2);
   m.insert(p2);
 
-  m["fortuner"] = 10; // Using this method in not in map then create entry and initialize with 0
+  m["fortuner"] = 10; 
 
   // access
   cout << m.at("alto") << endl;
@@ -29,7 +29,7 @@ int main() {
   }
 
   cout << m.size() << endl;
-  cout << m["hammer"] << endl;
+  cout << m["hammer"] << endl; // if not found in not in map then create entry and initialize with 0
   cout <<m.size() << endl;
 
   cout << "printing all entries: " << endl << endl;

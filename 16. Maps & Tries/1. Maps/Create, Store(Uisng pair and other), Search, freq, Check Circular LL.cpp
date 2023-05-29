@@ -17,7 +17,29 @@ int main() {
   // access
   cout << m.at("alto") << endl;
   cout << m.at("Scorpio") << endl;
+  cout << m["fortuner"] << endl;
 
+  //search
+  cout << m.count("Innova") << endl;
+  if(m.find("fortuner") != m.end()){
+    cout << "Fortuner Found" << endl;
+  }
+  else{
+    cout << " Fortuner not found" << endl;
+  }
+
+  cout << m.size() << endl;
+  cout << m["hammer"] << endl;
+  cout <<m.size() << endl;
+
+  cout << "printing all entries: " << endl << endl;
+
+  for(auto i: m){
+    cout << i.first << "->" << i.second << endl;
+  }
+
+
+  // //Count Frequency
   // string str = "thfdsiuejkfsdiuesd"
   // unordered_map<char, int> freq;
 

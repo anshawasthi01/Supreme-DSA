@@ -83,7 +83,7 @@ def getSuggestions(root, input):
 
 
 v = ["love", "lover", "loving", "last", "lost", "lane", "lord"]
-input_str = "lovi"
+input = "lovi"
 
 root = TrieNode('-')
 for word in v:

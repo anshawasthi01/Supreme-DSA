@@ -89,7 +89,7 @@ root = TrieNode('-')
 for word in v:
     insertWord(root, word)
 
-ans = getSuggestions(root, input_str)
+ans = getSuggestions(root, input)
 
 print("Printing the answer:")
 for suggestions in ans:

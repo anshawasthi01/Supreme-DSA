@@ -32,51 +32,27 @@ public:
 		}
 	}
 
-	bool checkCyclicUsingBfs(int src, unordered_map<int,bool>& visited) {
-		queue<int> q;
-		unordered_map<int,int> parent;
-		
-		q.push(src);
+	bool checkCyclicDirectedGraphUsingDfs(int src, unordered_map<int,bool>& visited,
+unordered_map<int,bool> dfsVisited) {
+
 		visited[src] = true;
-		parent[src] = -1;
-
-		while(!q.empty()) {
-			int frontNode = q.front();
-			q.pop();
-
-			for(auto nbr: adjList[frontNode]) {
-				if(!visited[nbr]) {
-					q.push(nbr);
-					visited[nbr] = true;
-					parent[nbr]=frontNode;
-				}
-				if(visited[nbr] && nbr != parent[frontNode]) {
-						//cycle present
-						return true;
-				}
-			}
-		}
-		return false;
-	}
-
-	bool checkCyclicUsingDfs(int src, unordered_map<int,bool>& visited, int parent) {
-		visited[src] = true;
+		dfsVisited[src] = true;
 
 		for(auto nbr: adjList[src]) {
 			if(!visited[nbr]) {
-				bool checkAageKaAns = checkCyclicUsingDfs(nbr, visited, src);
-				if(checkAageKaAns == true)
+				bool aageKaAnswer = checkCyclicDirectedGraphUsingDfs(nbr, visited, dfsVisited);
+				if(aageKaAnswer == true)
 					return true;
 			}
-			if(visited[nbr] && nbr != parent) {
-				//cycle present
+			if(visited[nbr] == true && dfsVisited[nbr] == true) {
 				return true;
 			}
 		}
+		//yaha hi galti hoti h 
+		dfsVisited[src] = false;
 		return false;
 	}
 };
-
 
 int main() {
 
@@ -92,12 +68,12 @@ int main() {
 	g.printAdjacencyList();
 	cout << endl;
 
-
 	bool ans = false;
 	unordered_map<int, bool> visited;
+	unordered_map<int, bool> dfsVisited;
 	for(int i=0; i<n; i++) {
-		if(!visited[i]) {
-			 ans = g.checkCyclicUsingBfs(i,visited);
+		if(!visited[i] ) {
+			ans = g.checkCyclicDirectedGraphUsingDfs(i,visited,dfsVisited);
 			if(ans == true)
 				break;
 		}
@@ -107,22 +83,6 @@ int main() {
 		cout << "Cycle is Present" << endl;
 	else
 		cout << "Cycle Absent" << endl;
-
-
-	// bool ansDfs = false;
-	// unordered_map<int, bool> visitedDfs;
-	// for(int i=0; i<n; i++) {
-	// 	if(!visitedDfs[i]) {
-	// 		 ansDfs = g.checkCyclicUsingDfs(i,visitedDfs, -1);
-	// 		if(ansDfs == true)
-	// 			break;
-	// 	}
-	// }
-
-	// if(ansDfs == true) 
-	// 	cout << "Cycle is Present" << endl;
-	// else
-	// 	cout << "Cycle Absent" << endl;
 
 	return 0;
 }

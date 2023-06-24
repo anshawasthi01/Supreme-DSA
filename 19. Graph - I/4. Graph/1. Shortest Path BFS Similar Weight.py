@@ -48,17 +48,6 @@ class Graph:
         print("Printing Ans:")
         print(*ans, sep=", ")
 
-    def topoSortDfs(self, src, visited, ans):
-        visited[src] = True
-
-        for neighbor, _ in self.adjList[src]:
-            if not visited[neighbor]:
-                self.topoSortDfs(neighbor, visited, ans)
-
-        # while returning, store the node in stack
-        print("Pushing", src)
-        ans.append(src)
-
 if __name__ == "__main__":
     g = Graph()
 

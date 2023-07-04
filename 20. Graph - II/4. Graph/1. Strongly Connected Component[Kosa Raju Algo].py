@@ -14,9 +14,9 @@ class Graph:
     def dfs1(self, src, s, vis):
         vis[src] = True
 
-        for nbr in self.adjList[src]:                  # map
+        for nbr in self.adjList[src]:                  
             # if not vis[nbr]:                         # list but In cpp same used in map
-            if nbr not in vis or not vis[nbr]:
+            if nbr not in vis or not vis[nbr]:         # map
                 self.dfs1(nbr, s, vis)
         s.append(src)
 

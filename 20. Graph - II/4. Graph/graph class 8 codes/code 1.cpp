@@ -83,35 +83,6 @@ class graph {
         return count;
     }
 
-    void findBridges(int src, int parent, int& timer, vector<int>& tin, vector<int>& low, unordered_map<int,bool> vis) {
-
-        vis[src] = true;
-        tin[src] = timer;
-        low[src] = timer;
-        timer++;
-
-        for(auto nbr: adjList[src]) {
-            if(nbr == parent)
-                continue;
-            if(!vis[nbr]) {
-                //dfs call
-                findBridges(nbr, src, timer, tin, low, vis);
-                //low update
-                low[src] = min(low[src], low[nbr]);
-                //check for bridge
-                if(low[nbr] > low[src]) {
-                    cout << nbr<<"--"<<src <<" is a bridge" << endl;
-                }
-            }
-            else{
-                //node is visited and not a parent
-                //low update
-                low[src] = min(low[src], low[nbr]);
-            }
-        }
-    }
-};
-
 int main() {
     graph g;
 

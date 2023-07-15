@@ -17,6 +17,13 @@ def clearIthBit(n, i):
     # print("After clearing:", n)
     return n
 
+# GENERIC
+def updateIthBit(n, i, target):
+    n = clearIthBit(n, i)
+    mask = target << i
+    n = n | mask
+    print("after updating:", n)
+
 # Testing the functions
 ans = getithBit(10, 0)
 print(ans)
@@ -24,5 +31,10 @@ print(ans)
 setithBit(10, 2)
 
 n = 10
-n = clearIthBit(n, 1)
+n = clearIthBit(n, 0)
 print("After clearing:", n)
+
+n = 10
+# 0 bit ko 1 set krdo
+# GENERIC
+updateIthBit(n, 0, 1)

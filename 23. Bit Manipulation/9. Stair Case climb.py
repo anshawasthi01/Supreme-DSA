@@ -1,0 +1,1 @@
+cout set bit 2 ki power n

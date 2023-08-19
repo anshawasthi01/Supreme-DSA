@@ -5,9 +5,13 @@
 def maxProfitFinder(prices, i, minPrice, maxProfit):
     if i == len(prices): return
 
-    if prices[i] < minPrice[0]: minPrice[0] = prices[i]
+    if prices[i] < minPrice[0]: 
+        minPrice[0] = prices[i]
+
     todayProfit = prices[i] - minPrice[0]
-    if todayProfit > maxProfit[0]: maxProfit[0] = todayProfit
+    
+    if todayProfit > maxProfit[0]: 
+        maxProfit[0] = todayProfit
 
     # RE
     maxProfitFinder(prices, i+1, minPrice, maxProfit)

@@ -1,25 +1,27 @@
 # https://practice.geeksforgeeks.org/problems/common-elements1132/1
 
-        ans = []
+# CodeHelp
+
+class Solution:
+    def commonElements(self, A, B, C, n1, n2, n3):
+        
         st = set()
         i, j, k = 0, 0, 0
-        while i<n1 and j<n2 and k<n3:
+        
+        while i < n1 and j < n2 and k < n3:
             if A[i] == B[j] and B[j] == C[k]:
                 st.add(A[i])
-                i -= 1
-                j -= 1
-                k -= 1
-            elif A[i]<B[j]:
                 i += 1
-            elif B[j]<C[k]:
+                j += 1
+                k += 1
+            elif A[i] < B[j]:
+                i += 1
+            elif B[j] < C[k]:
                 j += 1
             else:
                 k += 1
-                
-        for i in (st):
-            ans.append(i)
-            
-        return ans
+        
+        return sorted(list(st))
 
 
 

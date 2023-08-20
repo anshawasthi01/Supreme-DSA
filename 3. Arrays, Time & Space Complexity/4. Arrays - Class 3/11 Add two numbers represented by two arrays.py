@@ -1,18 +1,7 @@
+
 # https://practice.geeksforgeeks.org/problems/add-two-numbers-represented-by-two-arrays2408/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
 # https://www.geeksforgeeks.org/add-two-numbers-represented-by-two-arrays/
 
-class Solution:
-    def calc_Sum (self, a,  n, b, m) :
-        #Complete the function
-        f = ""
-        s = ""  # a.push_back(digit+ '0')
-        for i in arr:
-            f += str(i)
-        for i in brr:
-            s += str(i)
-        return int(f) + int(s)
-        
-        
 def helperAdd(a, b, n, m) :
     carry = 0
     ans = ''
@@ -44,7 +33,15 @@ def helperAdd(a, b, n, m) :
 
 class Solution:
     # def calc_Sum (self, a,  n, b, m) :
-    def calc_Sum (self, a1,  n1, a2, n2): 
+        # f = ""
+        # s = ""  # a.push_back(digit+ '0')
+        # for i in arr:
+        #     f += str(i)
+        # for i in brr:
+        #     s += str(i)
+        # return int(f) + int(s)
+        
+    def calc_Sum (self, a1,  n1, a2, n2) :
         if n1 < n2:
             return helperAdd(a2,a1,n2,n1)
         return helperAdd(a1,a2,n1,n2)

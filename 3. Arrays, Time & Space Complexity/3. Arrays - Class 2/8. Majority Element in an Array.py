@@ -1,19 +1,26 @@
-# https://leetcode.com/problems/peak-index-in-a-mountain-array/
+# https://leetcode.com/problems/majority-element/
 
-# CodeHelp
+# Moore's Voting Algo (Most Imp)
+
 class Solution:
-    def peakIndexInMountainArray(self, arr: List[int]) -> int:
-        s, e = 0, len(arr)-1
-
-        while s < e:
-            mid = s + (e - s)//2
-            if arr[mid] < arr[mid+1]:
-                s = mid + 1
+    def majorityElement(self, nums: List[int]) -> int:
+        count = 1
+        curr = nums[0]
+        for i in range(1,len(nums)):
+            if nums[i] == curr:
+                count += 1
             else:
-                e = mid
+                count -= 1
+                
+                if count == 0:
+                    count = 1
+                    curr = nums[i]
+        return curr
+
+
+                
         
-        return e
-        return s
-
-
-            
+        
+        
+        
+      

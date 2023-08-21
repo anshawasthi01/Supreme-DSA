@@ -19,5 +19,6 @@ def findPivot(arr):
 
 
 arr = [3,4,5,7,1,2]
+# jaha se monotonic function mein change dikhe
 ans = findPivot(arr)
 print("Pivot Element is : ",arr[ans])

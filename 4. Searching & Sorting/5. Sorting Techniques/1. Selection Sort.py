@@ -1,3 +1,5 @@
+# starting se traverse krenge jo b minimum number milega usko i = 0 pr rkh denge or i+=1 kar denge
+
 arr = [5,4,3,2,1]
 n = len(arr)
 # selection sort

@@ -2,6 +2,8 @@
 # odd element 1 baar hi aayega 
 # odd number ko chodkr baaki saare number pair mein honge
 
+# Observation : array and index 
+
 def solve(arr):
     s = 0
     e = len(arr) - 1

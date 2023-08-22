@@ -1,5 +1,7 @@
 # https://github.com/anshawasthi01/Supreme-DSA/blob/main/4.%20Searching%20%26%20Sorting/5.%20Sorting%20Techniques/SortingCodes/main%20(5).cpp
 
+# traverse krte jaayo or usko starting mein fix position m rkhte jaayo
+
 def insertion_sort(arr):
     for i in range(1, len(arr)):
         key = arr[i]

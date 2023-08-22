@@ -1,3 +1,5 @@
+# kisi bhi sorted array ka element is array mein 3 jgh pr milega(i, i-1, i+1)
+
 def binarySearch(arr, target):
     s, e = 0, len(arr)-1
     mid = s + (e - s)//2

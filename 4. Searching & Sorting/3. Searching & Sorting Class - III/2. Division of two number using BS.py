@@ -1,3 +1,7 @@
+# dividend = 10
+# divisor = 2
+# quotient = ?
+
 def solve(dividend, divisor):
     s, e = 0, abs(dividend)
     ans = 0

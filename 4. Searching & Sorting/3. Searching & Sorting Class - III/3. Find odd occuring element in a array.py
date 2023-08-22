@@ -1,3 +1,7 @@
+# saare number 2-2 ke pair m honge 2 se jyada kisi bhi number ka pair ek sath nahi hoga
+# odd element 1 baar hi aayega 
+# odd number ko chodkr baaki saare number pair mein honge
+
 def solve(arr):
     s = 0
     e = len(arr) - 1
@@ -28,7 +32,7 @@ def solve(arr):
 
 
 
-arr = [1,1,2,2,1]
+arr = [1,1,2,2,3,3,1,4,4,2,2,4,4]
 ans = solve(arr)
 print("index is ", ans)
 print("value is ", arr[ans])
